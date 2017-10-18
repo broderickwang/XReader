@@ -7,6 +7,7 @@ import com.google.gson.Gson;
 
 import marc.com.baselibrary.net.EngineCallback;
 import marc.com.baselibrary.net.HttpUtil;
+import marc.com.multrecycleadapter.MultiTypeSupport;
 import marc.com.news.R;
 import marc.com.news.adapter.NewsMainItemAdapter;
 import marc.com.news.bean.MainBean;
@@ -36,7 +37,12 @@ public class NewsFragmentPresenter implements NewsFragmentContract.Presenter {
 
 	@Override
 	public void createAdapter(Context context) {
-		mNewsMainItemAdapter = new NewsMainItemAdapter(context,null, R.layout.news_item_message);
+		mNewsMainItemAdapter = new NewsMainItemAdapter(context, null, new MultiTypeSupport() {
+			@Override
+			public int getLayoutId(Object item, int position) {
+				return R.layout.news_item_message;
+			}
+		});
 	}
 
 	@Override

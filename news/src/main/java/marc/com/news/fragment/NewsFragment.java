@@ -50,14 +50,14 @@ public class NewsFragment extends Fragment implements NewsFragmentContract.View 
 	@Override
 	public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 		View view = inflater.inflate(R.layout.news_fragment_page,container,false);
-		mRecyclerView = view.findViewById(R.id.news_recyclerview);
-		mRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+		/*mRecyclerView = view.findViewById(R.id.news_recyclerview);
+		mRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));*/
 
-		mPresenter.createAdapter(getContext());
+		/*mPresenter.createAdapter(getContext());
 		mPresenter.setAdapter();
 
 		Log.d("TAG", "onCreateView: -------");
-		mPresenter.getData(getContext());
+		mPresenter.getData(getContext());*/
 
 		return view;
 	}
@@ -76,6 +76,6 @@ public class NewsFragment extends Fragment implements NewsFragmentContract.View 
 
 	@Override
 	public void setAdapter(NewsMainItemAdapter newsMainItemAdapter) {
-		mRecyclerView.setAdapter(newsMainItemAdapter);
+//		mRecyclerView.setAdapter(newsMainItemAdapter);
 	}
 }

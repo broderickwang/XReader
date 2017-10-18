@@ -11,6 +11,7 @@ import java.util.Date;
 import java.util.List;
 
 import marc.com.multrecycleadapter.CommonRecycleAdapter;
+import marc.com.multrecycleadapter.MultiTypeSupport;
 import marc.com.multrecycleadapter.ViewHolder;
 import marc.com.news.R;
 import marc.com.news.bean.MainBean;
@@ -27,9 +28,13 @@ public class NewsMainItemAdapter extends CommonRecycleAdapter<MainBean.ItemListB
 
 	private int mLayoutId;
 
-	public NewsMainItemAdapter(Context context, List datas, int layoutId) {
+	public NewsMainItemAdapter(Context context, List<MainBean.ItemListBean> datas, int layoutId) {
 		super(context, datas, layoutId);
 		mLayoutId = layoutId;
+	}
+
+	public NewsMainItemAdapter(Context context, List<MainBean.ItemListBean> datas, MultiTypeSupport multiTypeSupport) {
+		super(context, datas, multiTypeSupport);
 	}
 
 	@Override
